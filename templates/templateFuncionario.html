@@ -1,0 +1,16 @@
+{% extends "template.html" %}
+{% block conteudo %}
+<h1 class="title">Busca de funcionários</h1>
+<table class="tabela">
+    <tr>
+        <td>Nome</td>
+        <td>Código</td>
+        <td>Cód departamento</td>
+    </tr>
+    <tr>
+        <td>{{ func.obterNome() }}</td>
+        <td>{{ func.obterCodigo() }}</td>
+        <td>{{ func.obterDepartamento() }}</td>
+    </tr>
+</table>
+{% endblock %}

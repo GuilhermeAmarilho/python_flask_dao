@@ -1,0 +1,16 @@
+{% extends "template.html" %}
+{% block conteudo %}
+<h1 class="celular">Busca de Departamento</h1>
+<table class="tabela">
+    <tr>
+        <td>Nome</td>
+        <td>Código</td>
+        <td>Cód gerente</td>
+    </tr>
+    <tr>
+        <td>{{ depto.obterNome() }}</td>
+        <td>{{ depto.obterCodigo() }}</td>
+        <td>{{ depto.obterGerente() }}</td>
+    </tr>
+</table>
+{% endblock %}

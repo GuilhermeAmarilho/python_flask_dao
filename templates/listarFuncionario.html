@@ -1,0 +1,20 @@
+{% extends "template.html" %}
+{% block conteudo %}
+<h1 class="title">listar Funcionarios</h1>
+<table class="tabela">
+    <tr>
+        <td>Nome</td>
+        <td>Código</td>
+        <td>Departamento</td>
+    </tr>
+    {% for lista in func %} 
+        <tr>
+            <td>{{ lista.obterNome() }}</td>
+            <td>{{ lista.obterCodigo() }}</td>
+            <td>{{ lista.obterDepartamento() }}</td>
+            <td><button class="lista"><a href="/deletarFuncionario/{{ lista.obterCodigo() }}">Deletar</a></button></td>
+            <td><button class="lista"><a href="/formAlterarFuncionario/{{ lista.obterCodigo() }}">Alterar</a></button></td>
+        </tr>
+    {% endfor %}
+</table>
+{% endblock %}

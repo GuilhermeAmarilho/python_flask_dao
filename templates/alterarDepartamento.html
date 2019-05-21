@@ -1,0 +1,18 @@
+{% extends "template.html" %}
+{% block conteudo %}
+<h1 class="title">Faça as alterações no departamento</h1>
+    <form action="{{ url_for('alterarDepartamento') }}" method="post">
+        <label for="nome">Nome: </label>
+        <input type="text" name="nome" value="{{ depto.obterNome() }}"><br><br>
+        <label for="gerente">Gerente:</label>
+        <select name="gerente">
+            <option value="{{ depto.obterGerente() }}" selected>{{ gerente.obterNome() }}</option>
+            {% for lista in func %}
+            <option value="{{ lista.obterCodigo() }}">{{ lista.obterNome() }}</option>
+            {% endfor %}
+        </select><br><br>
+        <label for="cod">Código: </label>
+        <input type="text" name="codigo" readonly=“true” value="{{ depto.obterCodigo() }}"><br><br>
+        <button type="submit" class="submit">enviar!</button>
+    </form>
+{% endblock %}

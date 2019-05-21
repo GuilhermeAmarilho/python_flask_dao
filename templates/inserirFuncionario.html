@@ -1,0 +1,15 @@
+{% extends "template.html" %}
+{% block conteudo %}
+    <h1 class="title">inserir Funcionario</h1>
+    <form action="{{ url_for('inserirFuncionario') }}" method="post">
+        <label for="nome" required>Informe o nome</label>
+        <input type="text" name="nome"><br><br>
+        <label for="departamento">Informe o departamento</label>
+        <select name="departamento">
+            {% for lista in depto %}
+            <option value="{{ lista.obterCodigo() }}">{{ lista.obterNome() }}</option>
+            {% endfor %}
+        </select><br><br>
+        <button type="submit" class="submit">enviar</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{{ url_for('static', filename='nav.css') }}">
+    </head>
+<body>
+    <div class="navbar">
+        <a href="/">Pagina inicial</a>
+        <div class="dropdown">
+            <button class="dropbtn">Funcionario 
+            </button>
+            <div class="dropdown-content">
+                <a href="/formInserirFuncionario">Inserir</a>
+                <a href="/formBuscarFuncionario">Buscar</a>
+                <a href="/listarFuncionario">Listar</a>
+            </div>
+        </div> 
+        <div class="dropdown">
+            <button class="dropbtn">Departamento 
+            </button>
+            <div class="dropdown-content">
+                <a href="/formInserirDepartamento">Inserir</a>
+                <a href="/formBuscarDepartamento">Buscar</a>
+                <a href="/listarDepartamento">Listar</a>
+            </div>
+        </div> 
+    </div>
+        {% block conteudo %}{% endblock %}  
+    </body>
+</html>

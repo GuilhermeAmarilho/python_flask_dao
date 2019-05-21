@@ -1,0 +1,9 @@
+{% extends "template.html" %}
+{% block conteudo %}
+    <h1 class="title">inserir departamento</h1>
+    <form action="{{ url_for('inserirDepartamento') }}" method="post">
+        <label for="nome" required>Informe o nome</label>
+        <input type="text" name="nome"><br><br>
+        <button type="submit" class="submit">enviar</button>
+    </form>
+{% endblock %}
